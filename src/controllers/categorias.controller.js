@@ -42,6 +42,37 @@ const categoriaController = {
                 errorMessage: error.message,
             });
         }
+    },
+    updateCategoria: async (req, res) => {
+        try {
+            const {descricaoCategoria} = req.body;
+            const idCategoria = Number(req.params.idCategoria);
+            if (!descricaoCategoria || !idCategoria || isNaN(idCategoria)) {
+                return res.status(400).json({
+                    message: "Descrição inválida"
+                });
+            }
+
+            const categoriaSelecionada = await categoriaModel.selectCategoriaById(idCategoria);
+            if (categoriaSelecionada.length === 0) {
+                return res.status(404).json({
+                    message: "Categoria não localizada"
+                });
+            }
+
+            const resultado = await categoriaModel.updateCategoria(descricaoCategoria, idCategoria);
+
+            res.status(201).json({
+                message: "Descrição alterada com sucesso",
+                data: resultado
+            });
+        } catch (error) {
+            console.error(`Erro ao executar: ${error}`);
+            res.status(500).json({
+                message: "Ocorreu um erro no servidor",
+                errorMessage: error.message,
+            });
+        }
     }
 };
 
