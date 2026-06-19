@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import { connection } from "../config/db.js";
 
 const categoriaModel = {
     selectAll: async () => {
