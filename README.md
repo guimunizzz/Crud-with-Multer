@@ -82,9 +82,3 @@ Para validar a entrega através do **Postman** ou **Insomnia**:
 1. Utilize o corpo da requisição como `Multipart Form`.
 2. No campo `vinculoImagem`, altere o tipo para **File**.
 3. Envie os demais campos (nome, valor, idCategoria) como campos de texto comuns.
-
----
-
-> **Nota de Boas Práticas:** O arquivo `.gitignore` está configurado para não subir a pasta `node_modules` e os arquivos de imagem dentro de `uploads/`, mantendo o repositório leve e profissional.
-
-Você quer que eu escreva o código da configuração do **Multer (storage)** para garantir que os nomes das imagens sejam únicos (usando data ou hash)?
