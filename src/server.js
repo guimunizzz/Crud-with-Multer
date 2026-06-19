@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/', routes);
-app.use('/produtos', express.static(path.resolve('uploads/Images')));
+app.use('/imagens', express.static(path.resolve('uploads/Images')));
 
 // Chama o banco uma vez só e, se der certo, sobe o servidor
 initializeDatabase().then(() => {
