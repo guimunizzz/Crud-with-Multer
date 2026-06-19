@@ -76,6 +76,7 @@ export async function initializeDatabase() {
                 idProduto INT PRIMARY KEY AUTO_INCREMENT,
                 nomeProduto VARCHAR(30) NOT NULL,
                 valorProduto DECIMAL(15,2) NOT NULL,
+                vinculoImagem VARCHAR(100) NULL,
                 idCategoria INT,
                 FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria),
                 dataCad TIMESTAMP DEFAULT CURRENT_TIMESTAMP
