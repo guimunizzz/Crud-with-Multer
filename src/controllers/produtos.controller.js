@@ -1,6 +1,6 @@
 import produtoModel from "../models/produtos.model.js";
 import fs from 'fs';
-import { type } from "os";
+    import { type } from "os";
 import path from 'path';
 
 const produtosController = {
@@ -31,6 +31,7 @@ const produtosController = {
             const pValorProduto = parseFloat(valorProduto)
 
             const vinculoImagem = req.file.filename;
+
             if (!pIdCategoria || isNaN(pIdCategoria) || !nomeProduto || !pValorProduto || isNaN(pValorProduto) || !vinculoImagem) {
                 return res.status(400).json({
                     message: "Dados do produto errados ou incompletos"
